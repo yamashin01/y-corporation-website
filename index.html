@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社Y-Corporation | 資産管理・運用</title>
+    <meta name="description" content="株式会社Y-Corporationの公式ホームページです。不動産を主とした金融資産の管理・運用を行っております。">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <!-- Google Fonts: 信頼感を出すために明朝体とゴシック体を併用 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // 濃い紺色（信頼）
+                        secondary: '#64748b', // グレー（落ち着き）
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 印刷時のレイアウト調整（税務署等への提出用） */
+        @media print {
+            .no-print { display: none; }
+            body { color: black; background: white; }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-gray-50">
+
+    <!-- ヘッダー -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- ロゴエリア -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex font-serif text-2xl font-bold text-primary tracking-wider">
+                        <img src="images/logo.png" alt="Logo" class="w-auto h-8">
+                        <span class="ml-2">Y-Corporation</span>
+                    </a>
+                </div>
+
+                <!-- PC用ナビゲーション -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">会社概要</a>
+                    <a href="#business" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">事業内容</a>
+                    <a href="#compliance" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">コンプライアンス</a>
+                    <a href="#access" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">アクセス</a>
+                </nav>
+
+                <!-- モバイルメニューボタン -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="text-gray-600 hover:text-primary focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- モバイル用メニュー展開部 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">会社概要</a>
+                <a href="#business" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">事業内容</a>
+                <a href="#compliance" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">コンプライアンス</a>
+                <a href="#access" onclick="toggleMenu()" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">アクセス</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- トップビュー（Hero Section） -->
+    <section class="relative bg-white pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-6 leading-tight">
+                次世代へつなぐ、<br class="sm:hidden">堅実な資産管理を。
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                株式会社Y-Corporationは、不動産および金融資産の<br class="hidden sm:inline">
+                適切な管理・運用を通じて、長期的かつ安定的な価値創造を追求します。
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#about" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-sm shadow-sm text-white bg-primary hover:bg-blue-900 transition">
+                    会社情報を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 会社概要 -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-serif font-bold text-primary border-b-2 border-primary inline-block pb-2">会社概要</h2>
+                <p class="mt-4 text-gray-500 text-sm">Corporate Profile</p>
+            </div>
+            
+            <div class="bg-white overflow-hidden border border-gray-200 rounded-sm shadow-sm">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700 w-1/3">会社名</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">株式会社Y-Corporation</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">所在地</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">東京都江戸川区</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">設立</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">2025年12月</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">代表取締役</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">（氏名を記載）</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">役員構成</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">取締役 1名</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">資本金</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">60万円</td>
+                        </tr>
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">事業内容</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">不動産を主とした金融資産の管理・運用</td>
+                        </tr>
+                        <!-- 必要に応じて法人番号を追加 -->
+                         <!-- 
+                        <tr>
+                            <th class="px-6 py-4 bg-gray-50 text-left text-sm font-bold text-gray-700">法人番号</th>
+                            <td class="px-6 py-4 text-sm text-gray-900">0000-00-000000</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 事業内容 -->
+    <section id="business" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-serif font-bold text-primary border-b-2 border-primary inline-block pb-2">事業内容</h2>
+                <p class="mt-4 text-gray-500 text-sm">Our Business</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 不動産管理事業 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-primary">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-800">不動産管理・運用</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        保有する不動産資産の価値維持・向上を目的とした管理業務を行っております。
+                        賃貸経営における収益性の確保に加え、長期的な視点に立った修繕計画の策定や、法規制への適切な対応を通じて、資産価値の最大化を図ります。
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc list-inside">
+                        <li>不動産賃貸管理</li>
+                        <li>施設維持管理・修繕計画</li>
+                        <li>不動産有効活用の企画・立案</li>
+                    </ul>
+                </div>
+
+                <!-- 金融資産管理事業 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-secondary">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-800">金融資産管理</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        有価証券等の金融資産について、リスク管理を徹底した上で運用・管理を行います。
+                        市況変動に左右されにくい堅実なポートフォリオ構築を目指し、資産の保全と安定的な成長を実現します。
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc list-inside">
+                        <li>有価証券の保有・管理</li>
+                        <li>ポートフォリオ管理</li>
+                        <li>資金運用計画の策定</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- コンプライアンス -->
+    <section id="compliance" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-serif font-bold text-primary border-b-2 border-primary inline-block pb-2">コンプライアンス・ポリシー</h2>
+                <p class="mt-4 text-gray-500 text-sm">Compliance Policy</p>
+            </div>
+
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">法令遵守の基本方針</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        当社は、会社法、金融商品取引法、その他関係法令および定款を遵守し、高い倫理観を持って事業活動を行います。社会の一員としての責任を自覚し、公正かつ誠実な企業活動を推進します。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">個人情報保護方針</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        業務上取得した個人情報については、個人情報保護法その他の関係法令を遵守し、適切に管理・保護いたします。取得した情報は、正当な事業目的の範囲内でのみ使用し、法令に基づく場合を除き、第三者への開示は行いません。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">反社会的勢力への対応</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        市民社会の秩序や安全に脅威を与える反社会的勢力とは一切の関係を遮断します。不当な要求には決して応じず、毅然とした態度で対応いたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス・お問い合わせ -->
+    <section id="access" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-serif font-bold text-primary border-b-2 border-primary inline-block pb-2">アクセス・お問い合わせ</h2>
+                <p class="mt-4 text-gray-500 text-sm">Access & Contact</p>
+            </div>
+
+            <div class="bg-white rounded-sm shadow-sm overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">株式会社Y-Corporation</h3>
+                        <div class="space-y-4 text-sm text-gray-600">
+                            <p class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>〒132-0000<br>東京都江戸川区（以下詳細住所）</span>
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span>info@Y-Corporation.example.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>営業時間：平日 9:00 - 17:00</span>
+                            </p>
+                        </div>
+                        <div class="mt-6 border-t pt-4">
+                            <p class="text-xs text-gray-500">
+                                ※お問い合わせは原則メールにて承っております。<br>
+                                既存のお取引先様につきましては、担当者へ直接ご連絡ください。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-200 min-h-[300px] relative">
+                        <!-- Google Mapsの埋め込みiframeをここに配置します -->
+                        <!-- 現在はダミーの表示になっています -->
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500">
+                            <div class="text-center">
+                                <svg class="w-12 h-12 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 15.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V8.618a1 1 0 01-1.447-.894L14 7m0 13V7"></path></svg>
+                                <p>Google Map Area</p>
+                                <p class="text-xs mt-1">実際の住所決定後に<br>埋め込みコードを配置します</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-slate-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-serif text-xl font-bold tracking-wider">Y-Corporation</span>
+            </div>
+            <div class="text-xs text-gray-400">
+                &copy; 2025 Y-Corporation Co., Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- モバイルメニュー用スクリプト -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
